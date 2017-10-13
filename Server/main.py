@@ -47,11 +47,11 @@ def application(environ, start_response):
     <div class="block">
     <img src="title.png" height="300px">
     <h3>Температура: {0}C°  , Влажнсть : {1}%<h3>
-    <h3>Время замера : {2}<h3>
+    <h3>Время замера : {2}:{3}<h3>
     </div>
     </body>
     </html>
-    """.format(data[0],data[1],data[2])
+    """.format(data[1],data[2],data[0].hour,data[0].minute)
 
 
 

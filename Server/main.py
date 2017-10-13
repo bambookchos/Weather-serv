@@ -51,7 +51,7 @@ def application(environ, start_response):
     </div>
     </body>
     </html>
-    """.format(data[1],data[2],"{:%B %d, %Y}".format(data[0]))
+    """.format(data[1],data[2],data[0].strftime("%d %B %Y %I:%M%p"))
 
 
 

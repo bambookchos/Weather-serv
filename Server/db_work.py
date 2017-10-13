@@ -8,7 +8,7 @@ mysql_conf = cfg.get("mysql")
 # TODO: cursor connect
 
 db = pymysql.connect(host=mysql_conf["host"], user=mysql_conf["user"], passwd=mysql_conf["passwd"], db=mysql_conf["db"], charset=mysql_conf["charset"])
-
+db.cursor().execute("SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED")
 
 def get_data(data_start_time, end_date_time):
     cursor = db.cursor()

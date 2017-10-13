@@ -19,7 +19,7 @@ def get_data(data_start_time, end_date_time):
 
 def get_last_data():
     cursor = db.cursor()
-    sql = "SELECT th_time, temperature, humidity FROM data ORDER BY th_time DESC LIMIT 1".format(data_start_time,data_end_time)
+    sql = "SELECT th_time, temperature, humidity FROM data ORDER BY th_time DESC LIMIT 1"
     cursor.execute(sql)
     data =  cursor.fetchall()
     return data

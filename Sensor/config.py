@@ -18,17 +18,14 @@ class Config(object):
                 log.logging.critical('Error in config file!')
                 sys.exit(-1)
 
-            self.__bot = data['bot']
             self.__mysql = data['mysql']
-            self.__path = data['path']
+
 
     def get(self, arg):
-        if (arg == "bot"):
-            return self.__bot
-        elif (arg == "mysql"):
+
+        if (arg == "mysql"):
             return self.__mysql
-        elif (arg == "path"):
-            return self.__path
+
         else:
             log.logging.error('Unknown config request!')
 

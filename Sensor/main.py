@@ -18,4 +18,4 @@ while True:
             db_work.add_data(datetime.now(),temperature,humidity)
         else:
                 print('Failed to get reading. Try again!')
-        time.sleep(15)
+        time.sleep(60)

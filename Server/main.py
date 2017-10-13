@@ -13,7 +13,7 @@ def application(environ, start_response):
     start_response(status, headers)
     data = db_work.get_last_data()[0]
     print(data)
-    body="""
+    body=b"""
     <html>
     <head>
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">

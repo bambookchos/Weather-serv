@@ -94,7 +94,7 @@ def application(environ, start_response):
     <h3>Температура: {0} C°  , Влажнсть : {1}%<h3>
     <h3>Время замера {2}<h3>
     <h4>График температуры за последние 3 часа</h4>
-    <img src="3h.png" height="300px">
+    <img src="3h.png" height="700px">
     </div>
     </body>
     </html>

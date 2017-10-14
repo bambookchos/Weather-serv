@@ -43,7 +43,7 @@ def application(environ, start_response):
     fig = plt.figure(figsize=(10,10))
     ax = fig.add_subplot(111)
     g = [time-datetime.timedelta(hours=3)+datetime.timedelta(minutes=15*i) for i in range(13)]
-    plt.xticks(g,[i.strftime("%I:%M%p")for i in g])
+    plt.xticks(g,[i.strftime("%H:%M")for i in g])
 
     ax2 = ax.twinx()
     ax2.plot(x,z, color='r')
@@ -98,7 +98,7 @@ def application(environ, start_response):
     <img src="title.png" height="300px">
     <h3>Температура: {0} C°  , Влажнсть : {1}%<h3>
     <h3>Время замера {2}<h3>
-    <h4>График температуры за последние 3 часа</h4>
+    <h4>График температуры и влвжности за последние 3 часа</h4>
     <img src="3h.png" height="700px">
     </div>
     </body>

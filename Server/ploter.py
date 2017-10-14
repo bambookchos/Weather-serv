@@ -48,5 +48,5 @@ while True:
 
 
   plt.savefig("../static/3h.png")
-
-  time.sleep(3)
+  print("Ploted!")
+  time.sleep(180)

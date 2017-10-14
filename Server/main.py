@@ -46,9 +46,10 @@ def application(environ, start_response):
     plt.xticks(g,[i.strftime("%H:%M")for i in g])
 
     ax2 = ax.twinx()
-    ax2.plot(x,z, color='r')
-    ax.plot(x,y)
-
+    line2 = ax2.plot(x,z, label="Humidity", color='r')
+    line1 = ax.plot(x,y, label="Temperature",)
+    plt.legend(handles=[line1])
+    plt.legend(handles=[line2])
     ax.plot(x,y)
     ax.grid(True)
     fig.autofmt_xdate()
@@ -98,7 +99,7 @@ def application(environ, start_response):
     <img src="title.png" height="300px">
     <h3>Температура: {0} C°  , Влажнсть : {1}%<h3>
     <h3>Время замера {2}<h3>
-    <h4>График температуры и влвжности за последние 3 часа</h4>
+    <h4>График температуры и влажности за последние 3 часа</h4>
     <img src="3h.png" height="700px">
     </div>
     </body>

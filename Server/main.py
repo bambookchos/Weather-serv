@@ -28,11 +28,13 @@ def application(environ, start_response):
 
     x = []
     y = []
+    z = []
     time = datetime.datetime.now()
     big_data = db_work.get_data(time - datetime.timedelta(hours=3), time)
     for i in big_data:
             x.append(i[0])
             y.append(i[1])
+            z.append(i[2])
 
         # plot
 
@@ -43,6 +45,9 @@ def application(environ, start_response):
     g = [time-datetime.timedelta(hours=3)+datetime.timedelta(minutes=15*i) for i in range(13)]
     plt.xticks(g,[i.strftime("%I:%M%p")for i in g])
 
+    ax2 = ax.twinx()
+    ax2.plot(x,z, color='r')
+    ax.plot(x,y)
 
     ax.plot(x,y)
     ax.grid(True)

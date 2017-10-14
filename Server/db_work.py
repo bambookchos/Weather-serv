@@ -10,7 +10,7 @@ mysql_conf = cfg.get("mysql")
 db = pymysql.connect(host=mysql_conf["host"], user=mysql_conf["user"], passwd=mysql_conf["passwd"], db=mysql_conf["db"], charset=mysql_conf["charset"])
 db.cursor().execute("SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED")
 
-def get_data(data_start_time, end_date_time):
+def get_data(data_start_time, data_end_time):
     cursor = db.cursor()
     sql = "SELECT th_time, temperature, humidity FROM data WHERE th_time between '{0}' AND '{1}'".format(data_start_time,data_end_time)
     cursor.execute(sql)

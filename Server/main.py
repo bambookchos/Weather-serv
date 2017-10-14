@@ -7,11 +7,56 @@ from config import cfg
 
 
 
+import random
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+import math
+import datetime
+
+
 def application(environ, start_response):
     status = '200 OK'
     headers = [('Content-type', 'text/html')]
     start_response(status, headers)
     data = db_work.get_last_data()[0]
+
+
+
+
+
+
+    x = []
+    y = []
+    time = datetime.datetime.now()
+    big_data = db_work.get_data(time - datetime.timedelta(hours=3), time)
+    for i in big_data:
+            x.append(i[0])
+            y.append(i[1])
+
+        # plot
+
+
+
+    fig = plt.figure(figsize=(10,10))
+    ax = fig.add_subplot(111)
+    g = [time-datetime.timedelta(hours=3)+datetime.timedelta(minutes=15*i) for i in range(13)]
+    plt.xticks(g,[i.strftime("%I:%M%p")for i in g])
+
+
+    ax.plot(x,y)
+    ax.grid(True)
+    fig.autofmt_xdate()
+        # beautify the x-labels
+
+
+
+    plt.savefig("../static/3h.png")
+
+
+
+
+
     print(data)
     body="""
     <html>
@@ -48,6 +93,8 @@ def application(environ, start_response):
     <img src="title.png" height="300px">
     <h3>Температура: {0} C°  , Влажнсть : {1}%<h3>
     <h3>Время замера {2}<h3>
+    <h4>График температуры за последние 3 часа</h4>
+    <img src="3h.png" height="300px">
     </div>
     </body>
     </html>

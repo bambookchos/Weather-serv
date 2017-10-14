@@ -46,11 +46,11 @@ def application(environ, start_response):
     plt.xticks(g,[i.strftime("%H:%M")for i in g])
 
     ax2 = ax.twinx()
-    line2 = ax2.plot(x,z, label="Humidity", color='r')
-    line1 = ax.plot(x,y, label="Temperature")
+    ax2.plot(x,z, label="Humidity", color='r')
+    ax.plot(x,y, label="Temperature", color='b')
+    ax.legend(loc='upper left')
+    ax2.legend(loc='upper right')
 
-    ax.plot(x,y)
-    plt.legend('Temperature', 'Humidity')
     ax.grid(True)
     fig.autofmt_xdate()
         # beautify the x-labels

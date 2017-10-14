@@ -46,7 +46,9 @@ while True:
       # beautify the x-labels
     plt.savefig("../static/3h.png")
 
-
+    x = []
+    y = []
+    z = []
 
     time_n = datetime.datetime.now()
     big_data = db_work.get_data(time_n - datetime.timedelta(hours=24), time_n)

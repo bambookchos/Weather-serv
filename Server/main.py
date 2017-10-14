@@ -48,7 +48,7 @@ def application(environ, start_response):
     ax2 = ax.twinx()
     line2 = ax2.plot(x,z, label="Humidity", color='r')
     line1 = ax.plot(x,y, label="Temperature")
-    plt.legend(('Temperature', 'Humidity')
+    plt.legend('Temperature', 'Humidity')
     ax.plot(x,y)
     ax.grid(True)
     fig.autofmt_xdate()

@@ -16,7 +16,7 @@ def application(environ, start_response):
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
     <style>
-    .block{{
+    .block{
         background:#fff;
         opacity:.7;
         padding:10px;
@@ -24,18 +24,18 @@ def application(environ, start_response):
         width:800px;
         text-align:center;
         margin:auto
-    }}
-    body{{
+    }
+    body{
         font-family:Lobster,cursive;
         background:url(lands.jpg) no-repeat;
         -moz-background-size:100%;
         -webkit-background-size:cover;
         -o-background-size:cover;
         background-size:cover
-        }}
-    h3{{
+        }
+    h3{
         font-size:30pt
-    }}
+    }
     </style>
     <title>yadoTroF Weather</title>
     </head>

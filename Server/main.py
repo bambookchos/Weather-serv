@@ -9,7 +9,6 @@ def application(environ, start_response):
     status = '200 OK'
     headers = [('Content-type', 'text/html')]
     start_response(status, headers)
-    data = db_work.get_last_data()[0]
 
     print(data)
     body="""

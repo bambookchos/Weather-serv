@@ -50,7 +50,7 @@ def application(environ, start_response):
     </div>
     </body>
     </html>
-    """)
+    """
 
 
 

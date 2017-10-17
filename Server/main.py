@@ -10,7 +10,6 @@ def application(environ, start_response):
     headers = [('Content-type', 'text/html')]
     start_response(status, headers)
 
-    print(data)
     body="""
     <html>
     <head>
